@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Kit" parent="Theme.Design">
+
+    </style>
+    <style name="Kit.Light" parent="Theme.Design.Light">
+        <item name="colorPrimary">#FFFFFF</item>
+    </style>
+</resources>
