@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Kit" parent="Theme.Design">
+    <style name="Kit" parent="Theme.Design.NoActionBar">
 
     </style>
-    <style name="Kit.Light" parent="Theme.Design.Light">
+    <style name="Kit.Light" parent="Theme.Design.Light.NoActionBar">
         <item name="colorPrimary">#FFFFFF</item>
+        <item name="android:textColorPrimary">?attr/colorAccent</item>
+        <item name="colorControlNormal">?attr/colorAccent</item>
+    </style>
+    <style name="Kit.Light.NoActionBar" parent="Kit.Light">
+    </style>
+    <style name="Kit.NoActionBar" parent="Kit">
     </style>
 </resources>
