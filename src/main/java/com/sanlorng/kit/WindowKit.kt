@@ -42,7 +42,6 @@ fun Window.navigationBarLight(light: Boolean){
 }
 
 fun Window.systemLight(light: Boolean){
-    var ui = this.decorView.systemUiVisibility
     statusBarLight(light)
     navigationBarLight(light)
 }
@@ -54,10 +53,10 @@ fun Window.fitSystemLayout(){
     this.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
 
 }
-fun Window.transucentSystemUI(){
-    this.transucentSystemUI(false)
+fun Window.translucentSystemUI(){
+    this.translucentSystemUI(false)
 }
-fun Window.transucentSystemUI(light: Boolean){
+fun Window.translucentSystemUI(light: Boolean){
     val enable = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("status_bar_mask",false)
     this.statusBarColor = if (enable)
         context.getColor(R.color.statusBarColor)
@@ -75,7 +74,7 @@ fun Window.systemLowProfile(hide: Boolean){
         ui = ui and View.SYSTEM_UI_FLAG_LOW_PROFILE.inv()
     this.decorView.systemUiVisibility = ui
 }
-fun Window.openStatusBarMask(enable:Boolean){
+fun Window.openStatusBarShadow(enable:Boolean){
     val isOpen = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("status_bar_mask",false)
     Log.d("window pacakge",context.packageName)
     if (isOpen != enable) {
@@ -88,7 +87,7 @@ fun Window.openStatusBarMask(enable:Boolean){
             context.getColor(R.color.zeroColor)
     }
 }
-fun Window.setStatusBarMask(enable: Boolean){
+fun Window.setStatusBarShadow(enable: Boolean){
         statusBarColor = if (enable)
             context.getColor(R.color.statusBarColor)
         else

@@ -64,17 +64,14 @@ get() {
     return  MediaType.parse("application/json")!!
 }
 fun OkHttpClient.postRequest(url:String,mediaType:MediaType?,data:String): ResponseBody?{
-    return try {
+
         val requestBody = RequestBody.create(mediaType,data)
         val request = Request.Builder()
             .url(url)
             .post(requestBody)
             .build()
-        newCall(request).execute().body()
-    }catch (e:Exception){
-        e.printStackTrace()
-        null
-    }
+        return  newCall(request).execute().body()
+
 }
 
     object WebKit{

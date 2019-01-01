@@ -29,7 +29,9 @@ fun Context.exceptionDialog(exception: Exception) {
 
 val Context.defaultSharedPreference:SharedPreferences
 get() {
-    return PreferenceManager.getDefaultSharedPreferences(this)
+    if (ContextKit.defaultPreference == null)
+        ContextKit.defaultPreference = PreferenceManager.getDefaultSharedPreferences(this)
+    return ContextKit.defaultPreference!!
 }
 
 
@@ -63,4 +65,7 @@ fun Context.processDialog():AlertDialog{
     return AlertDialog.Builder(this)
         .setView(com.sanlorng.kit.R.layout.process_dialog).create()
 
+}
+object ContextKit{
+    var defaultPreference:SharedPreferences? = null
 }
