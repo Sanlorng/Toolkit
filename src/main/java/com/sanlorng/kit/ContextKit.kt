@@ -1,17 +1,12 @@
 package com.sanlorng.kit
 
-import android.annotation.TargetApi
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Build
 import android.preference.PreferenceManager
-import android.util.Log
-import android.view.*
-import java.lang.Exception
+
 /**
  * Create by Sanlorng on 2018/4/9
  */

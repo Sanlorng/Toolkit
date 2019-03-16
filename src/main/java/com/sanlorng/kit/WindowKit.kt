@@ -68,10 +68,10 @@ fun Window.translucentSystemUI(light: Boolean){
 }
 fun Window.systemLowProfile(hide: Boolean){
     var ui = this.decorView.systemUiVisibility
-    if (hide)
-        ui = ui or View.SYSTEM_UI_FLAG_LOW_PROFILE
+    ui = if (hide)
+        ui or View.SYSTEM_UI_FLAG_LOW_PROFILE
     else
-        ui = ui and View.SYSTEM_UI_FLAG_LOW_PROFILE.inv()
+        ui and View.SYSTEM_UI_FLAG_LOW_PROFILE.inv()
     this.decorView.systemUiVisibility = ui
 }
 fun Window.openStatusBarShadow(enable:Boolean){
